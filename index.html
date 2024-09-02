@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2487.6">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Countdown Timer&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: Arial, sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #f4f4f4;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 50px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>#countdown {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 24px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #FFA500;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #333;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 5px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: inline-block;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>h1 {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #FFA500;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h1&gt;Countdown to 12 Midnight PST on October 19, 2024&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="countdown"&gt;&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Set the date and time to count down to</p>
+<p class="p1"><span class="Apple-converted-space">        </span>var countDownDate = new Date("Oct 19, 2024 00:00:00 PST").getTime();</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Update the countdown every 1 second</p>
+<p class="p1"><span class="Apple-converted-space">        </span>var x = setInterval(function() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Get today's date and time</p>
+<p class="p1"><span class="Apple-converted-space">            </span>var now = new Date().getTime();</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Find the time difference between now and the countdown date</p>
+<p class="p1"><span class="Apple-converted-space">            </span>var distance = countDownDate - now;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Time calculations for days, hours, minutes and seconds</p>
+<p class="p1"><span class="Apple-converted-space">            </span>var days = Math.floor(distance / (1000 * 60 * 60 * 24));</p>
+<p class="p1"><span class="Apple-converted-space">            </span>var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));</p>
+<p class="p1"><span class="Apple-converted-space">            </span>var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));</p>
+<p class="p1"><span class="Apple-converted-space">            </span>var seconds = Math.floor((distance % (1000 * 60)) / 1000);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Display the result in the element with id="countdown"</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById("countdown").innerHTML = days + "d " + hours + "h "</p>
+<p class="p1"><span class="Apple-converted-space">            </span>+ minutes + "m " + seconds + "s ";</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// If the countdown is finished, write some text</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (distance &lt; 0) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>clearInterval(x);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById("countdown").innerHTML = "EXPIRED";</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}, 1000);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
